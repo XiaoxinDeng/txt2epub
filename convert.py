@@ -50,7 +50,9 @@ def select_file(default_dir:str=None, file_types:str=None, title:str=None):
     # Create a root window
     root = tk.Tk()
     root.withdraw()  # Hide the root window
-
+    # Focus on the root window
+    root.focus_force()
+    
     if not default_dir:
         default_dir = get_documents_directory()
 
@@ -63,7 +65,7 @@ def select_file(default_dir:str=None, file_types:str=None, title:str=None):
     if file_path:
         print(f'Selected .txt file: {file_path}.')
     else:
-        print('No txt file is selected')
+        print('No txt file is selected.')
     return file_path
 
 def select_txt_file(default_directory:str):
